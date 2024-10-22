@@ -1,0 +1,103 @@
+footer {
+    margin-top:23px ;
+    background-color: #333; /* Dark gray background */
+    color: white; /* Text color */
+    padding: 20px; /* Padding for spacing */
+}
+
+.footer-container {
+    max-width: 1200px; /* Max width for footer content */
+    margin: 0 auto; /* Center the footer */
+    display: flex; /* Display footer sections inline */
+    flex-wrap: wrap; /* Wrap footer sections to the next line */
+    justify-content: space-between; /* Space between footer sections */
+}
+
+.footer-section {
+    margin: 20px; /* Space around footer sections */
+    flex-basis: 20%; /* Set the width of each footer section */
+}
+
+.footer-section h4 {
+    margin-top: 0; /* Remove top margin */
+}
+
+.social-media {
+    margin: 10px 0; /* Space around social media links */
+}
+
+.social-media a {
+    color: white; /* Link color */
+    margin: 0 10px; /* Space between social media links */
+    text-decoration: none; /* Remove underline */
+}
+
+.social-media a:hover {
+    color: #007BFF; /* Change color on hover */
+}
+
+.footer-nav ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 10px 0; /* Space around footer navigation */
+}
+
+.footer-nav li {
+    margin: 10px 0; /* Space between navigation items */
+}
+
+.footer-nav a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer-nav a:hover {
+    color: #007BFF; /* Change color on hover */
+}
+
+footer p {
+    text-align: center; /* Center copyright text */
+    margin-top: 20px; /* Space around copyright text */
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack footer sections vertically */
+        align-items: center; /* Center items */
+    }
+
+    .footer-section {
+        flex-basis: 100%; /* Full width for each section */
+        margin: 10px 0; /* Space around footer sections */
+        text-align: center; /* Center text in each section */
+    }
+
+    .social-media {
+        display: flex; /* Display social media links inline */
+        justify-content: center; /* Center social media links */
+    }
+
+    .social-media a {
+        margin: 0 5px; /* Space between social media links */
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .footer-section h4 {
+        font-size: 18px; /* Smaller font size for headings */
+    }
+
+    .footer-nav li {
+        margin: 5px 0; /* Reduce space between navigation items */
+    }
+}

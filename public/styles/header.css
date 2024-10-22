@@ -1,0 +1,63 @@
+header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 6rem;
+    background-color: #333; /* Dark gray background */
+    color: white; /* Text color for better visibility */
+    border-bottom: 1px solid #ddd;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px; /* Adjust the size of the logo */
+    height: auto;
+    margin-right: 10px; /* Space between logo and company name */
+}
+
+.company-name {
+    font-size: 24px;
+}
+
+.nav-links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px; /* Space between navigation items */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white; /* Link color for better visibility */
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #007BFF; /* Change color on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .nav-links ul {
+        flex-direction: column; /* Stack navigation items vertically */
+        width: 100%; /* Full width for navigation */
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Space between navigation items */
+    }
+}

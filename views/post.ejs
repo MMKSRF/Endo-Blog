@@ -1,28 +1,6 @@
 <%- include('header.ejs') %>
 
-
-
-
-
-  
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="about.html">About</a>
-            </li>
-            <li>
-              <a href="login.html">Login</a>
-            </li>
-            <li>
-              <a href="signup.html">Sign up</a>
-            </li>
-          </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container -->
-    </nav>
+   
 
 
     <!-- Page Content -->
@@ -36,7 +14,7 @@
           <!-- Blog Post -->
 
           <!-- Title -->
-          <h1 class="post-title">Blog Post Title</h1>
+          <h1 class="post-title"><%= post.title%></h1>
 
           <!-- Author -->
           <p class="lead">
@@ -51,69 +29,57 @@
           <hr>
 
           <!-- Post Content -->
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
-
+          <p><%= post.content %></p>
           <hr>
+
+
+
 
           <!-- Blog Comments -->
 
           <!-- Comments Form -->
           <div class="well">
             <h4>Leave a Comment:</h4>
-            <form role="form">
+
+            <form action="/comment" method="post">
               <div class="form-group">
-                <textarea class="form-control" rows="3"></textarea>
+                <label for="comment">Comment:</label>
+                <textarea name="comment" id="comment" rows="3"  class="form-control" required></textarea> <!-- Textarea for comment -->
               </div>
+              <input type="hidden" name="postId" value="<%= post.id %>"> <!-- Hidden input for post ID -->
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
+
+
           </div>
+
+
 
           <hr>
 
           <!-- Posted Comments -->
 
           <!-- Comment -->
-          <div class="media">
-            <a class="pull-left" href="#">
-              <img class="media-object" src="http://placehold.it/64x64" alt="">
-            </a>
-            <div class="media-body">
-              <h4 class="media-heading">Start Bootstrap
-                <small>August 25, 2014 at 9:30 PM</small>
-              </h4>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-            </div>
-          </div>
+        
 
           <!-- Comment -->
-          <div class="media">
-            <a class="pull-left" href="#">
-              <img class="media-object" src="http://placehold.it/64x64" alt="">
-            </a>
-            <div class="media-body">
-              <h4 class="media-heading">Start Bootstrap
-                <small>August 25, 2014 at 9:30 PM</small>
-              </h4>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-              <!-- Nested Comment -->
-              <div class="media">
+
+
+          <% post.comments.forEach(function(comment) { %>
+            <div class="media">
                 <a class="pull-left" href="#">
-                  <img class="media-object" src="http://placehold.it/64x64" alt="">
+                    <img class="media-object" src="http://placehold.it/64x64" alt="">
                 </a>
                 <div class="media-body">
-                  <h4 class="media-heading">Nested Start Bootstrap
-                    <small>August 25, 2014 at 9:30 PM</small>
-                  </h4>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    <h4 class="media-heading">
+                        <small>August 25, 2014 at 9:30 PM</small> <!-- You can replace this with a dynamic date if available -->
+                    </h4>
+                    <p><%= comment %></p> <!-- Display the comment text -->
                 </div>
-              </div>
-              <!-- End Nested Comment -->
             </div>
-          </div>
+          <% }); %>
+
+             </div>
 
         </div>
       </div>

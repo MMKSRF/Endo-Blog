@@ -78,17 +78,34 @@
             <hr>
   
             <!-- Third Blog Post -->
-            <h2 class="post-title">
-              <a href="/post"><%= subject %></a>
-            </h2>
-            <p class="lead">
-              by Author
-            </p>
-            <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:45 PM</p>
-            <p><%=content %></p>
-            <a class="btn btn-default" href="post.html">Read More</a>
-  
-            <hr>
+
+
+
+
+
+            <% submits.forEach(function(post) { %>
+              <form action="/post" method="POST" class="mt-4">
+                <h2 class="post-title">
+                  <a href="/post/<%= post.id %>"><%= post.title %></a>
+                </h2>
+                <p class="lead">
+                  by Author
+                </p>
+                <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:45 PM</p>
+                <p><%= post.content %></p>
+                
+                <!-- Hidden input to pass the post ID -->
+                <input type="hidden" name="postId" value="<%= post.id %>">
+                
+                <button type="submit" class="btn btn-default">Read More</button>
+                <hr>
+              </form>
+            <% }); %>
+            
+      
+      
+      
+      
   
             <!-- Pager -->
             <ul class="pager">
@@ -107,7 +124,6 @@
   
       </div>
       <!-- /.container -->
-
 
 
 

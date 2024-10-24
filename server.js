@@ -212,7 +212,7 @@ app.post("/post",(req,res)=>{
     console.log(req.body)
     const postId = parseInt(req.body.postId); // Get the post ID from the form submission
     const post = demoPost.submits.find(p => p.id === postId); // Find the post with the specific ID
-
+    console.log(req.body)
     if (post) {
         // If the post is found, you can render it or send a response
         // console.log('Found post:', post);

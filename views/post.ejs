@@ -65,7 +65,7 @@
           <!-- Comment -->
 
 
-          <% post.comments.forEach(function(comment) { %>
+          <% post.comments.reverse().forEach(function(comment) { %>
             <div class="media">
                 <a class="pull-left" href="#">
                     <img class="media-object" src="http://placehold.it/64x64" alt="">
@@ -75,8 +75,9 @@
                         <small>August 25, 2014 at 9:30 PM</small> <!-- You can replace this with a dynamic date if available -->
                     </h4>
                     <p><%= comment %></p> <!-- Display the comment text -->
-                </div>
+                </div> 
             </div>
+            <hr>
           <% }); %>
 
              </div>
